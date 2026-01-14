@@ -1,5 +1,5 @@
 """
-⚛️ QuantPhysics - Streamlit 组件工具
+ QuantPhysics - Streamlit 组件工具
 可复用的 UI 组件
 """
 
@@ -7,6 +7,32 @@ import streamlit as st
 import streamlit.components.v1 as components
 from pathlib import Path
 from typing import Optional
+
+# ============================================
+# 全局样式加载
+# ============================================
+
+# 缓存 CSS 内容，避免重复读取文件
+@st.cache_resource
+def _load_css() -> str:
+    """加载全局 CSS 文件内容"""
+    css_path = Path(__file__).parent.parent / "assets" / "styles.css"
+    if css_path.exists():
+        return css_path.read_text(encoding='utf-8')
+    return ""
+
+
+def apply_global_styles() -> None:
+    """
+    应用全局样式。在每个页面开头调用一次即可。
+    
+    Usage:
+        from utils import apply_global_styles
+        apply_global_styles()
+    """
+    css = _load_css()
+    if css:
+        st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
 # ============================================
 # p5.js 嵌入组件

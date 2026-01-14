@@ -1,5 +1,5 @@
 """
-⚛️ QuantPhysics - 物理计算工具函数
+ QuantPhysics - 物理计算工具函数
 常用物理公式和计算函数
 """
 

@@ -1,5 +1,5 @@
 """
-⚛️ QuantPhysics - 可视化工具函数
+ QuantPhysics - 可视化工具函数
 Plotly 图表模板和样式配置
 """
 

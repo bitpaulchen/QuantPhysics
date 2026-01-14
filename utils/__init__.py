@@ -1,5 +1,5 @@
 """
-⚛️ QuantPhysics - 工具函数模块
+ QuantPhysics - 工具函数模块
 """
 
 from .physics import *
