@@ -28,8 +28,9 @@ with st.sidebar:
 # 页面定义
 # ============================================
 pages = {
-    "": [
+    "欢迎": [
         st.Page("pages/00_home.py", title="首页", icon=":material/home:", default=True),
+        st.Page("pages/99_samples.py", title="语法案例", icon=":material/menu:")
     ],
     "力学": [
         st.Page("pages/01_linear_motion.py", title="直线运动", icon=":material/trending_flat:"),

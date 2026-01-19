@@ -11,19 +11,24 @@ st.title("运动的描述")
 st.caption("必修一")
 
 
+
+# 简单版本
+st.info('点击"Save to workspace" 将计划保存到 `.cursor/plans/` 中。这既为你的团队创建文档,也为后续工作提供上下文。',icon=":material/trending_flat:")
+
+# 或者使用 st.markdown 配合 st.code
+st.markdown('点击"Save to workspace" 将计划保存到')
+st.code('.cursor/plans/', language=None)
+st.markdown('中。这既为你的团队创建文档,也为后续工作提供上下文。')
+
+st.success('This is a success message!', icon="✅")
 # --- 1. 质点模型 ---
 st.markdown("#### 质点模型")
 
 st.markdown("用来代替物体的有质量的点。这是一种**理想化**模型——当物体的形状和大小对研究问题的影响可忽略时，可将其简化为质点。")
 
-st.markdown("""
-<div class="definition">
-<strong>质点</strong>：用来代替物体的有质量的点。这是一种**理想化**模型——当物体的形状和大小对研究问题的影响可忽略时，可将其简化为质点。
-</div>
-""", unsafe_allow_html=True)
 
 st.markdown("### 判断准则")
-st.markdown("能否视为质点，取决于**研究问题**，而非物体本身的大小。同一物体在不同情境下结论不同：")
+st.markdown("能否视为质点，取决于**研究问题**，而非**物体本身的大小**。同一物体在不同情境下结论不同：")
 
 # 质点判断表格
 st.markdown("""
