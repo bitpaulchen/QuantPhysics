@@ -3,7 +3,11 @@ import pandas as pd
 import numpy as np
 import time
 # 设置页面配置（宽屏模式更适合展示卡片）
-st.set_page_config(page_title="Streamlit 函数视觉参考手册", layout="wide")
+st.set_page_config(
+    page_title="Streamlit 函数视觉参考手册", 
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 # 自定义一些简单的 CSS 来美化卡片标题和间距
 st.markdown("""
