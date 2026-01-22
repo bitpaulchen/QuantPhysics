@@ -233,7 +233,6 @@ with st.container():
 st.write("This is outside the container")
 
 # 空容器
-st.sidebar.header("Empty container")
 placeholder = st.empty()
 placeholder.markdown("Hello")
 time.sleep(1)

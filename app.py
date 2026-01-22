@@ -1,5 +1,5 @@
 import streamlit as st
-from utils import apply_global_styles
+# from utils import apply_global_styles
 
 # ============================================
 # 页面配置
@@ -14,15 +14,7 @@ st.set_page_config(
 # ============================================
 # 全局样式
 # ============================================
-apply_global_styles()
-
-# ============================================
-# 侧边栏内容
-# ============================================
-with st.sidebar:
-    # Logo / 标题区域
-    st.markdown('<div class="sidebar-title">QuantPhysics</div>', unsafe_allow_html=True)
-    st.markdown("---")
+# apply_global_styles()
 
 # ============================================
 # 页面定义

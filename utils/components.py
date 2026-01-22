@@ -8,6 +8,53 @@ import streamlit.components.v1 as components
 from pathlib import Path
 from typing import Optional
 
+
+# 交互函数 ：选择题
+def render_choice_question(question_data, question_key):
+    """
+    渲染高度整合的选择题组件
+    """
+    # 1. 显示题干
+    title = question_data.get("title", "")
+    content = question_data.get("question", "")
+    st.markdown(f"**{title}** {content}")
+    
+    # 2. 准备选项数据
+    opts_dict = question_data["options"]
+    keys = list(opts_dict.keys()) # ['A', 'B', 'C', 'D']
+    
+    # 3. 渲染单选框
+    # format_func 负责把 Key 映射为具体显示的文本
+    selected_key = st.radio(
+        "请选择你的答案：",
+        options=keys,
+        format_func=lambda x: f"{x}: {opts_dict[x]['content']}",
+        index=None,
+        key=question_key
+    )
+    
+    # 4. 判定与反馈逻辑
+    if selected_key:
+        result = opts_dict[selected_key]
+        is_correct = result.get("is_correct", False)
+        feedback = result.get("feedback", "")
+        
+        if is_correct:
+            st.success(feedback)
+            # st.balloons() # 增加互动感
+        else:
+            st.error("再想想看？")
+            with st.expander("查看当前选项解析"):
+                st.markdown(feedback)
+
+
+
+
+
+
+
+
+
 # ============================================
 # 全局样式加载
 # ============================================
@@ -33,6 +80,12 @@ def apply_global_styles() -> None:
     css = _load_css()
     if css:
         st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
+
+
+
+
+
+
 
 # ============================================
 # p5.js 嵌入组件
